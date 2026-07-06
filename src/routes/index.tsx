@@ -958,14 +958,16 @@ function Rewards() {
 /* ---------------- contact ---------------- */
 
 function Contact() {
+  const items = [
+    { icon: MapPin, title: "Address", lines: ["Westerwaldstraße 23", "56587 Oberhonnefeld-Gierend"], cta: "Navigate", Icon: Navigation, href: "#" },
+    { icon: Phone, title: "Phone", lines: ["+49 2634 940054", "Reception & Support"], cta: "Call", Icon: Phone, href: "tel:+492634940054" },
+    { icon: Clock, title: "Business Hours", lines: ["Open 24 Hours", "365 days a year"], cta: "Learn more", Icon: ArrowRight, href: "#services" },
+    { icon: Mail, title: "Email", lines: ["official@mavrostech.in", "We reply within 24 hours"], cta: "Send Email", Icon: Send, href: "mailto:official@mavrostech.in" },
+  ];
   return (
     <Section id="contact" eyebrow="Get in touch" title="We're here 24/7">
-      <div className="grid gap-6 lg:grid-cols-3">
-        {[
-          { icon: MapPin, title: "Address", lines: ["Westerwaldstraße 23", "56587 Oberhonnefeld-Gierend", ""], cta: "Navigate", Icon: Navigation },
-          { icon: Phone, title: "Phone", lines: ["+49 2634 940054", "Reception & Support"], cta: "Call", Icon: Phone },
-          { icon: Clock, title: "Business Hours", lines: ["Open 24 Hours", "365 days a year"], cta: "Email", Icon: Mail },
-        ].map((c, i) => (
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {items.map((c, i) => (
           <motion.div
             key={c.title}
             initial={{ opacity: 0, y: 30 }}
@@ -978,12 +980,12 @@ function Contact() {
               <c.icon className="h-6 w-6" />
             </div>
             <p className="text-xs uppercase tracking-widest text-muted-foreground">{c.title}</p>
-            <div className="mt-2 space-y-1 text-sm">
+            <div className="mt-2 space-y-1 text-sm break-words">
               {c.lines.map((l) => <p key={l}>{l}</p>)}
             </div>
-            <button className="mt-5 inline-flex items-center gap-2 rounded-full btn-primary px-4 py-2 text-xs font-semibold">
+            <a href={c.href} className="mt-5 inline-flex items-center gap-2 rounded-full btn-primary px-4 py-2 text-xs font-semibold">
               <c.Icon className="h-4 w-4" /> {c.cta}
-            </button>
+            </a>
           </motion.div>
         ))}
       </div>
