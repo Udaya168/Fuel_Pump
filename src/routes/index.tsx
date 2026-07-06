@@ -234,7 +234,7 @@ function Header({ lang, setLang, dark, setDark, menuOpen, setMenuOpen }: any) {
           <div className="grid h-10 w-10 place-items-center rounded-xl bg-jet-yellow font-black text-jet-black shadow-glow">J</div>
           <div className="leading-tight">
             <p className="font-display text-sm font-bold">JET Fuel</p>
-            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Germany</p>
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Premium Energy</p>
           </div>
         </a>
         <nav className="hidden items-center gap-1 lg:flex">
@@ -246,8 +246,8 @@ function Header({ lang, setLang, dark, setDark, menuOpen, setMenuOpen }: any) {
         </nav>
         <div className="flex items-center gap-2">
           <div className="hidden items-center rounded-full border border-border p-1 text-xs sm:flex">
-            <button onClick={() => setLang("DE")} className={`rounded-full px-3 py-1 ${lang === "DE" ? "bg-jet-yellow text-jet-black" : ""}`}>🇩🇪 DE</button>
-            <button onClick={() => setLang("EN")} className={`rounded-full px-3 py-1 ${lang === "EN" ? "bg-jet-yellow text-jet-black" : ""}`}>🇬🇧 EN</button>
+            <button onClick={() => setLang("DE")} className={`rounded-full px-3 py-1 font-semibold ${lang === "DE" ? "bg-jet-yellow text-jet-black" : ""}`}>DE</button>
+            <button onClick={() => setLang("EN")} className={`rounded-full px-3 py-1 font-semibold ${lang === "EN" ? "bg-jet-yellow text-jet-black" : ""}`}>EN</button>
           </div>
           <button onClick={() => setDark(!dark)} aria-label="Toggle theme" className="grid h-10 w-10 place-items-center rounded-full border border-border hover:bg-muted">
             {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
