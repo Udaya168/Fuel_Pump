@@ -7,7 +7,7 @@ import {
   ArrowUp, TrendingUp, TrendingDown, Search, Sun, Moon, Menu, X, Battery,
   Sparkles, Award, Users, Globe, Play, ChevronDown, Wind, Droplets, Cloud,
   MessageCircle, Send, Apple, PlayCircle, Gift, Percent, Cake, Wallet, Sandwich,
-  IceCream, GlassWater, Croissant, ParkingCircle,
+  IceCream, GlassWater, Croissant, ParkingCircle, Instagram, Linkedin,
 } from "lucide-react";
 
 import heroImg from "@/assets/hero-station.jpg";
@@ -93,7 +93,7 @@ function JetHome() {
         aria-hidden
         className="pointer-events-none fixed inset-0 z-0 opacity-40 transition-opacity"
         style={{
-          background: `radial-gradient(600px circle at ${gradient.x}% ${gradient.y}%, oklch(0.87 0.19 96 / 0.15), transparent 60%)`,
+          background: `radial-gradient(600px circle at ${gradient.x}% ${gradient.y}%, oklch(0.7 0.22 40 / 0.15), transparent 60%)`,
         }}
       />
 
@@ -171,7 +171,7 @@ function JetHome() {
               <button onClick={() => setChatOpen(false)}><X className="h-4 w-4" /></button>
             </div>
             <div className="space-y-2 p-4 text-sm">
-              <div className="rounded-2xl bg-muted px-3 py-2">Hallo! How can I help you fuel your journey today?</div>
+              <div className="rounded-2xl bg-muted px-3 py-2">Hi there! How can I help you fuel your journey today?</div>
               <div className="ml-8 rounded-2xl bg-jet-yellow px-3 py-2 text-jet-black">Find nearest station</div>
             </div>
             <div className="flex items-center gap-2 border-t border-border p-3">
@@ -234,7 +234,7 @@ function Header({ lang, setLang, dark, setDark, menuOpen, setMenuOpen }: any) {
           <div className="grid h-10 w-10 place-items-center rounded-xl bg-jet-yellow font-black text-jet-black shadow-glow">J</div>
           <div className="leading-tight">
             <p className="font-display text-sm font-bold">JET Fuel</p>
-            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Germany</p>
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Premium Energy</p>
           </div>
         </a>
         <nav className="hidden items-center gap-1 lg:flex">
@@ -246,8 +246,8 @@ function Header({ lang, setLang, dark, setDark, menuOpen, setMenuOpen }: any) {
         </nav>
         <div className="flex items-center gap-2">
           <div className="hidden items-center rounded-full border border-border p-1 text-xs sm:flex">
-            <button onClick={() => setLang("DE")} className={`rounded-full px-3 py-1 ${lang === "DE" ? "bg-jet-yellow text-jet-black" : ""}`}>🇩🇪 DE</button>
-            <button onClick={() => setLang("EN")} className={`rounded-full px-3 py-1 ${lang === "EN" ? "bg-jet-yellow text-jet-black" : ""}`}>🇬🇧 EN</button>
+            <button onClick={() => setLang("DE")} className={`rounded-full px-3 py-1 font-semibold ${lang === "DE" ? "bg-jet-yellow text-jet-black" : ""}`}>DE</button>
+            <button onClick={() => setLang("EN")} className={`rounded-full px-3 py-1 font-semibold ${lang === "EN" ? "bg-jet-yellow text-jet-black" : ""}`}>EN</button>
           </div>
           <button onClick={() => setDark(!dark)} aria-label="Toggle theme" className="grid h-10 w-10 place-items-center rounded-full border border-border hover:bg-muted">
             {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -279,7 +279,7 @@ function Hero() {
     <section id="home" className="relative min-h-[92vh] overflow-hidden">
       {/* background image */}
       <div className="absolute inset-0">
-        <img src={heroImg} alt="JET Fuel Germany station at sunset" className="h-full w-full object-cover" />
+        <img src={heroImg} alt="JET Fuel station at sunset" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-background" />
       </div>
 
@@ -305,8 +305,8 @@ function Hero() {
           </motion.div>
           <motion.h1 variants={fadeUp} className="text-4xl font-bold leading-[1.05] text-white sm:text-6xl md:text-7xl lg:text-8xl">
             Fueling Every <br />
-            <span className="text-gradient-yellow">Journey</span> Across <br />
-            Germany.
+            <span className="text-gradient-yellow">Journey</span>, <br />
+            Everywhere.
           </motion.h1>
           <motion.p variants={fadeUp} className="mt-6 max-w-xl text-base text-white/80 sm:text-lg">
             Premium Fuel · Ultra-Fast EV Charging · Fresh Food · Open 24/7. Engineered for the road, crafted for you.
@@ -372,7 +372,7 @@ function MiniChart({ trend }: { trend: string }) {
 
 function FuelPrices() {
   return (
-    <Section id="fuel" eyebrow="Live pricing" title="Today's fuel prices" subtitle="Real-time prices from JET stations across Germany. Updated every 5 minutes.">
+    <Section id="fuel" eyebrow="Live pricing" title="Today's fuel prices" subtitle="Real-time prices from JET stations nationwide. Updated every 5 minutes.">
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
         {FUEL_TYPES.map((f, i) => (
           <motion.div
@@ -503,7 +503,7 @@ function Services() {
 function EVCharging() {
   return (
     <section id="ev-charging" className="relative overflow-hidden bg-jet-black py-24 text-white sm:py-32">
-      <div className="absolute inset-0 opacity-30" style={{ background: "radial-gradient(ellipse at center, oklch(0.87 0.19 96 / 0.4), transparent 60%)" }} />
+      <div className="absolute inset-0 opacity-30" style={{ background: "radial-gradient(ellipse at center, oklch(0.7 0.22 40 / 0.4), transparent 60%)" }} />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div>
           <motion.p initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-jet-yellow">
@@ -583,7 +583,7 @@ function ChargingRing({ percent }: { percent: number }) {
 
 function StationFinder() {
   return (
-    <Section id="stations" eyebrow="Station finder" title="250+ stations across Germany" subtitle="Search by city, postal code, or use your current location.">
+    <Section id="stations" eyebrow="Station finder" title="250+ stations nationwide" subtitle="Search by city, postal code, or use your current location.">
       <div className="grid gap-6 lg:grid-cols-5">
         {/* Search + Card */}
         <div className="space-y-4 lg:col-span-2">
@@ -610,7 +610,7 @@ function StationFinder() {
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-jet-yellow" />
                 <div>
                   <p>Westerwaldstraße 23</p>
-                  <p className="text-muted-foreground">56587 Oberhonnefeld-Gierend, Germany</p>
+                  <p className="text-muted-foreground">56587 Oberhonnefeld-Gierend</p>
                 </div>
               </div>
               <div className="flex flex-wrap gap-1.5">
@@ -630,7 +630,7 @@ function StationFinder() {
         {/* Map */}
         <div className="lg:col-span-3">
           <div className="relative aspect-[4/3] overflow-hidden rounded-4xl border border-border bg-jet-black shadow-elegant">
-            <img src={autobahnImg} alt="Germany map" className="h-full w-full object-cover opacity-70" loading="lazy" />
+            <img src={autobahnImg} alt="Station coverage map" className="h-full w-full object-cover opacity-70" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-br from-jet-black/60 via-transparent to-jet-black/60" />
             {/* map pins */}
             {[
@@ -669,7 +669,7 @@ function StationFinder() {
 
 function AboutStation() {
   return (
-    <Section id="about" eyebrow="About JET" title="30 years of trust on German roads">
+    <Section id="about" eyebrow="About JET" title="30 years of trust on the road">
       <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
           <div className="overflow-hidden rounded-4xl shadow-elegant">
@@ -683,7 +683,7 @@ function AboutStation() {
 
         <div>
           <p className="text-muted-foreground">
-            From the Autobahn to your neighborhood corner — JET has been fueling German drivers for over three decades with premium quality, honest prices, and a warm welcome.
+            From the highway to your neighborhood corner — JET has been fueling drivers for over three decades with premium quality, honest prices, and a warm welcome.
           </p>
           <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {[
@@ -808,7 +808,7 @@ function FoodCafe() {
 function MobileApp() {
   return (
     <section className="relative overflow-hidden bg-jet-black py-24 text-white sm:py-32">
-      <div className="absolute inset-0 opacity-40" style={{ background: "radial-gradient(ellipse at 30% 50%, oklch(0.87 0.19 96 / 0.3), transparent 60%)" }} />
+      <div className="absolute inset-0 opacity-40" style={{ background: "radial-gradient(ellipse at 30% 50%, oklch(0.7 0.22 40 / 0.3), transparent 60%)" }} />
       <div className="relative mx-auto grid max-w-7xl gap-16 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-jet-yellow">JET App</p>
@@ -852,7 +852,7 @@ function MobileApp() {
             <div className="relative h-[560px] w-[280px] rounded-[3rem] border-[10px] border-jet-graphite bg-jet-black shadow-elegant" style={{ animation: "float-slow 6s ease-in-out infinite" }}>
               <div className="absolute left-1/2 top-2 h-5 w-24 -translate-x-1/2 rounded-full bg-jet-black" />
               <div className="flex h-full flex-col overflow-hidden rounded-[2.2rem] bg-gradient-to-b from-jet-graphite to-jet-black p-4 pt-8 text-white">
-                <p className="text-xs opacity-60">Guten Morgen,</p>
+                <p className="text-xs opacity-60">Good morning,</p>
                 <p className="text-xl font-bold">Lukas 👋</p>
                 <div className="mt-4 rounded-2xl bg-jet-yellow p-4 text-jet-black">
                   <p className="text-[10px] font-semibold uppercase">Nearest Station</p>
@@ -958,14 +958,16 @@ function Rewards() {
 /* ---------------- contact ---------------- */
 
 function Contact() {
+  const items = [
+    { icon: MapPin, title: "Address", lines: ["Westerwaldstraße 23", "56587 Oberhonnefeld-Gierend"], cta: "Navigate", Icon: Navigation, href: "#" },
+    { icon: Phone, title: "Phone", lines: ["+49 2634 940054", "Reception & Support"], cta: "Call", Icon: Phone, href: "tel:+492634940054" },
+    { icon: Clock, title: "Business Hours", lines: ["Open 24 Hours", "365 days a year"], cta: "Learn more", Icon: ArrowRight, href: "#services" },
+    { icon: Mail, title: "Email", lines: ["official@mavrostech.in", "We reply within 24 hours"], cta: "Send Email", Icon: Send, href: "mailto:official@mavrostech.in" },
+  ];
   return (
     <Section id="contact" eyebrow="Get in touch" title="We're here 24/7">
-      <div className="grid gap-6 lg:grid-cols-3">
-        {[
-          { icon: MapPin, title: "Address", lines: ["Westerwaldstraße 23", "56587 Oberhonnefeld-Gierend", "Germany"], cta: "Navigate", Icon: Navigation },
-          { icon: Phone, title: "Phone", lines: ["+49 2634 940054", "Reception & Support"], cta: "Call", Icon: Phone },
-          { icon: Clock, title: "Business Hours", lines: ["Open 24 Hours", "365 days a year"], cta: "Email", Icon: Mail },
-        ].map((c, i) => (
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {items.map((c, i) => (
           <motion.div
             key={c.title}
             initial={{ opacity: 0, y: 30 }}
@@ -978,12 +980,12 @@ function Contact() {
               <c.icon className="h-6 w-6" />
             </div>
             <p className="text-xs uppercase tracking-widest text-muted-foreground">{c.title}</p>
-            <div className="mt-2 space-y-1 text-sm">
+            <div className="mt-2 space-y-1 text-sm break-words">
               {c.lines.map((l) => <p key={l}>{l}</p>)}
             </div>
-            <button className="mt-5 inline-flex items-center gap-2 rounded-full btn-primary px-4 py-2 text-xs font-semibold">
+            <a href={c.href} className="mt-5 inline-flex items-center gap-2 rounded-full btn-primary px-4 py-2 text-xs font-semibold">
               <c.Icon className="h-4 w-4" /> {c.cta}
-            </button>
+            </a>
           </motion.div>
         ))}
       </div>
@@ -1003,16 +1005,31 @@ function Footer() {
               <div className="grid h-10 w-10 place-items-center rounded-xl bg-jet-yellow font-black text-jet-black">J</div>
               <div>
                 <p className="font-display font-bold">JET Fuel</p>
-                <p className="text-[10px] uppercase tracking-widest opacity-60">Germany</p>
+                <p className="text-[10px] uppercase tracking-widest opacity-60">Premium Energy</p>
               </div>
             </div>
             <p className="mt-4 max-w-xs text-sm text-white/60">
-              Premium fuel, ultra-fast charging and 24/7 service across 250+ stations in Germany.
+              Premium fuel, ultra-fast charging and 24/7 service across 250+ stations.
             </p>
             <div className="mt-4 flex gap-2">
-              {["F", "X", "in", "Ig"].map((s) => (
-                <a key={s} href="#" className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-xs hover:bg-jet-yellow hover:text-jet-black">{s}</a>
-              ))}
+              <a
+                href="https://www.instagram.com/mavros_ai?igsh=YjY1NnVzM2NkZ3ky"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="grid h-10 w-10 place-items-center rounded-full border border-white/10 transition-colors hover:bg-jet-yellow hover:text-jet-black"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/mavros-tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="grid h-10 w-10 place-items-center rounded-full border border-white/10 transition-colors hover:bg-jet-yellow hover:text-jet-black"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
@@ -1039,8 +1056,8 @@ function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row">
-          <p>© {new Date().getFullYear()} JET Fuel Germany Demo. All rights reserved.</p>
-          <p>Made with <span className="text-jet-yellow">♥</span> in Deutschland — a fictional client demo.</p>
+          <p>© {new Date().getFullYear()} JET Fuel Demo. All rights reserved.</p>
+          <p>A fictional client demo — associated under Mavros Tech Private Limited.</p>
         </div>
       </div>
     </footer>
