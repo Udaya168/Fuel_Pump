@@ -10,7 +10,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -38,7 +37,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    // Error reporting removed
   }, [error]);
 
   return (
@@ -87,15 +86,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#FFD400" },
       { name: "twitter:title", content: "JET Fuel — Premium Fuel, EV Charging & 24/7 Service" },
       { name: "twitter:description", content: "Premium fuel, ultra-fast EV charging, fresh food and 24/7 service at 250+ JET stations. Fueling every journey." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/da6c87b3-1ce8-4bf2-8013-b50eacf79a34/id-preview-6ccde35f--6ad86738-192b-4d92-8e1e-765238e7a879.lovable.app-1783346372966.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/da6c87b3-1ce8-4bf2-8013-b50eacf79a34/id-preview-6ccde35f--6ad86738-192b-4d92-8e1e-765238e7a879.lovable.app-1783346372966.png" },
+      { property: "og:image", content: "/favicon.svg" },
+      { name: "twitter:image", content: "/favicon.svg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     ],
   }),
   shellComponent: RootShell,
