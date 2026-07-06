@@ -7,7 +7,7 @@ import {
   ArrowUp, TrendingUp, TrendingDown, Search, Sun, Moon, Menu, X, Battery,
   Sparkles, Award, Users, Globe, Play, ChevronDown, Wind, Droplets, Cloud,
   MessageCircle, Send, Apple, PlayCircle, Gift, Percent, Cake, Wallet, Sandwich,
-  IceCream, GlassWater, Croissant, ParkingCircle,
+  IceCream, GlassWater, Croissant, ParkingCircle, Instagram, Linkedin,
 } from "lucide-react";
 
 import heroImg from "@/assets/hero-station.jpg";
