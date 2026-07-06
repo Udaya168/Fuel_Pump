@@ -305,8 +305,8 @@ function Hero() {
           </motion.div>
           <motion.h1 variants={fadeUp} className="text-4xl font-bold leading-[1.05] text-white sm:text-6xl md:text-7xl lg:text-8xl">
             Fueling Every <br />
-            <span className="text-gradient-yellow">Journey</span> Across <br />
-            Germany.
+            <span className="text-gradient-yellow">Journey</span>, <br />
+            Everywhere.
           </motion.h1>
           <motion.p variants={fadeUp} className="mt-6 max-w-xl text-base text-white/80 sm:text-lg">
             Premium Fuel · Ultra-Fast EV Charging · Fresh Food · Open 24/7. Engineered for the road, crafted for you.
