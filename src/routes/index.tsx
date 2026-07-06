@@ -1012,9 +1012,24 @@ function Footer() {
               Premium fuel, ultra-fast charging and 24/7 service across 250+ stations.
             </p>
             <div className="mt-4 flex gap-2">
-              {["F", "X", "in", "Ig"].map((s) => (
-                <a key={s} href="#" className="grid h-9 w-9 place-items-center rounded-full border border-white/10 text-xs hover:bg-jet-yellow hover:text-jet-black">{s}</a>
-              ))}
+              <a
+                href="https://www.instagram.com/mavros_ai?igsh=YjY1NnVzM2NkZ3ky"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="grid h-10 w-10 place-items-center rounded-full border border-white/10 transition-colors hover:bg-jet-yellow hover:text-jet-black"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/mavros-tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="grid h-10 w-10 place-items-center rounded-full border border-white/10 transition-colors hover:bg-jet-yellow hover:text-jet-black"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
