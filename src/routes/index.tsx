@@ -93,7 +93,7 @@ function JetHome() {
         aria-hidden
         className="pointer-events-none fixed inset-0 z-0 opacity-40 transition-opacity"
         style={{
-          background: `radial-gradient(600px circle at ${gradient.x}% ${gradient.y}%, oklch(0.87 0.19 96 / 0.15), transparent 60%)`,
+          background: `radial-gradient(600px circle at ${gradient.x}% ${gradient.y}%, oklch(0.7 0.22 40 / 0.15), transparent 60%)`,
         }}
       />
 
@@ -503,7 +503,7 @@ function Services() {
 function EVCharging() {
   return (
     <section id="ev-charging" className="relative overflow-hidden bg-jet-black py-24 text-white sm:py-32">
-      <div className="absolute inset-0 opacity-30" style={{ background: "radial-gradient(ellipse at center, oklch(0.87 0.19 96 / 0.4), transparent 60%)" }} />
+      <div className="absolute inset-0 opacity-30" style={{ background: "radial-gradient(ellipse at center, oklch(0.7 0.22 40 / 0.4), transparent 60%)" }} />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div>
           <motion.p initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-jet-yellow">
@@ -808,7 +808,7 @@ function FoodCafe() {
 function MobileApp() {
   return (
     <section className="relative overflow-hidden bg-jet-black py-24 text-white sm:py-32">
-      <div className="absolute inset-0 opacity-40" style={{ background: "radial-gradient(ellipse at 30% 50%, oklch(0.87 0.19 96 / 0.3), transparent 60%)" }} />
+      <div className="absolute inset-0 opacity-40" style={{ background: "radial-gradient(ellipse at 30% 50%, oklch(0.7 0.22 40 / 0.3), transparent 60%)" }} />
       <div className="relative mx-auto grid max-w-7xl gap-16 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-jet-yellow">JET App</p>
